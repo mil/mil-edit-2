@@ -117,11 +117,11 @@ var mil_edit = (function(my) {
       { key : { key_code  : 89, ctrl_key : true, shift_key : false  },  handler : user_actions.undo },
       { key : { key_code  : 90, ctrl_key : true, shift_key : false  },  handler : user_actions.redo },
 
-      { key : { key_code  : 9,  ctrl_key  : false, shift_key : true },  handler : user_actions.indent_right }, // right tab
-      { key : { key_code  : 37, ctrl_key  : false, shift_key : true },  handler : user_actions.indent_right }, // right ->
+      { key : { key_code  : 9,  ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right tab
+      { key : { key_code  : 37, ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right ->
 
-      { key : { key_code  : 9, ctrl_key : false, shift_key : false  },  handler : user_actions.indent_left }, // left tab
-      { key : { key_code  : 39, ctrl_key : false, shift_key : true  },  handler : user_actions.indent_left }, // left <-
+      { key : { key_code  : 9, ctrl_key : false, shift_key : false  },  handler : user_actions.indent }, // left tab
+      { key : { key_code  : 39, ctrl_key : false, shift_key : true  },  handler : user_actions.indent }, // left <-
 
       { key : { key_code  : 69, ctrl_key : true, shift_key : false  },  handler : user_actions.fold }, // ctrl e
 

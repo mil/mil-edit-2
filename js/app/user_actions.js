@@ -10,12 +10,12 @@ var mil_edit = (function(my) {
 
   user_actions.undo = function() { history.redo(); return false; };
   user_actions.redo = function() { history.undo(); return false; };
-  user_actions.indent_right = function() {
+  user_actions.undent = function() {
     var restore_position = util.brother_elements_to_end($("#active"));
     history.do_action({undo: function() { return focus.indent(restore_position); }, redo: focus.undent});
     return false;
   };
-  user_actions.indent_left = function() {
+  user_actions.indent = function() {
     history.do_action({undo: focus.undent, redo: focus.indent});
     focus.browser_focus_reset(true);
     return false;

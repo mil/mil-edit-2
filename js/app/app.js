@@ -52,7 +52,6 @@ var mil_edit = (function(my) {
     dump_focus_state : state.dump_focus_state,
     load_state: state.load_state,
 
-
     // line manipulation
     indent : user_actions.indent,
     undent : user_actions.undent,
