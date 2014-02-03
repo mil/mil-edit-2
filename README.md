@@ -23,6 +23,7 @@ TODO
 ----
 - Bugs
     * Undo/Redo stack not entirely consistent
+    * mil_markdown bold within bold/italic within italic cancels out
 - Clean up CSS
 - Make Credits File
 - New (Full) Key bindings Documentation
