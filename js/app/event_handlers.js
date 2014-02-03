@@ -113,9 +113,10 @@ var mil_edit = (function(my) {
     if (util.type(k) == "[object KeyboardEvent]") {
       k = { keyCode : k.keyCode, shiftKey : k.shiftKey, ctrlKey : k.ctrlKey };
     }
+    console.log(k);
     var bindings = [
-      { key : { key_code  : 89, ctrl_key : true, shift_key : false  },  handler : user_actions.undo },
-      { key : { key_code  : 90, ctrl_key : true, shift_key : false  },  handler : user_actions.redo },
+      { key : { key_code  : 89, ctrl_key : true, shift_key : false  },  handler : user_actions.redo },
+      { key : { key_code  : 90, ctrl_key : true, shift_key : false  },  handler : user_actions.undo },
 
       { key : { key_code  : 9,  ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right tab
       { key : { key_code  : 37, ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right ->

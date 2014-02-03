@@ -8,8 +8,8 @@ var mil_edit = (function(my) {
 
   var user_actions = new Object();
 
-  user_actions.undo = function() { history.redo(); return false; };
-  user_actions.redo = function() { history.undo(); return false; };
+  user_actions.redo = function() { history.redo(); return false; };
+  user_actions.undo = function() { history.undo(); return false; };
   user_actions.undent = function() {
     var restore_position = util.brother_elements_to_end($("#active"));
     history.do_action({undo: function() { return focus.indent(restore_position); }, redo: focus.undent});

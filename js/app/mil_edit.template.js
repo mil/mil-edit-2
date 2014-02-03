@@ -2,7 +2,7 @@ var template_buttons = ''.concat(
   '<div id="buttons">',
 
   '<a id="undo" class="hidden" title="Press Ctrl-Z to Undo" onclick="mil_edit.undo()"></a>',
-  '<a id="redo" class="hidden" title="Press Shift-Ctrl-Z to Redo" onclick="mil_edit.redo()"></a>',
+  '<a id="redo" class="hidden" title="Press Ctrl-Y to Redo" onclick="mil_edit.redo()"></a>',
 
   '<span id="undo_separator" class="hidden separator"></span>',
   '<a id="undent" title="Press [Shift] [Tab] to Undent" onclick="mil_edit.undent()"></a>',
