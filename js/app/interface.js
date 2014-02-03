@@ -8,13 +8,18 @@ var mil_edit = (function(my) {
   var globals = my.globals;
   var interface = new Object();
 
-  interface.recurrent = function() {
-    tree.clean_tree();
+  interface.sync_ui_buttons = function() {
     util.set_class($("#bold"), "active", focus.is_in_bold());
     util.set_class($("#italic"), "active", focus.is_in_italic());
     util.set_class($("#undo"), "hidden", !history.undo_stack.length);
     util.set_class($("#redo"), "hidden", !history.redo_stack.length);
     util.set_class($("#undo_separator"), "hidden", !(history.redo_stack.length || history.undo_stack.length));
+  };
+
+  interface.recurrent = function() {
+    tree.clean_tree();
+    interface.sync_ui_buttons();
+
     tree.fix_collapse_expand_buttons();
     interface.ensure_input_in_view();
     //focus.browser_focus_reset();
