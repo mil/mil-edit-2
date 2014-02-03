@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Miledit 2: A simple markdown list editor in javascript.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/page.css" />
+    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script type="text/javascript" src="./js/lib/zepto.js"></script>
+    <script type="text/javascript" src="./js/lib/zepto.fx.js"></script>
+    <script type="text/javascript" src="./js/lib/underscore.min.js"></script>
+
+    <script type="text/javascript" src="./js/app/history.js"></script>
+    <script type="text/javascript" src="./js/app/globals.js"></script>
+    <script type="text/javascript" src="./js/app/util.js"></script>
+    <script type="text/javascript" src="./js/app/mil_edit.template.js"></script>
+    <script type="text/javascript" src="./js/app/mil_markdown.js"></script>
+    <script type="text/javascript" src="./js/app/tree.js"></script>
+    <script type="text/javascript" src="./js/app/interface.js"></script>
+    <script type="text/javascript" src="./js/app/state.js"></script>
+    <script type="text/javascript" src="./js/app/user_actions.js"></script>
+    <script type="text/javascript" src="./js/app/event_handlers.js"></script>
+    <script type="text/javascript" src="./js/app/app.js"></script>
+
+    <script type="text/javascript" src="./js/start_on_load.js"></script>
+  </head>
+  <body>
+    <div id="application">
+      <a class='clear-content' onclick='mil_edit.clear()' title="Press Ctrl-X to Clear the Content">Clear Content</a>
+      <h1>mil edit2</h1>
+      <div id="editor"></div>
+      <div id="footer">
+      </div>
+    </div>
+  </body>
+</html>

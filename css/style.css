@@ -1,0 +1,574 @@
+/* mil-edit Display Page specific 
+ * You don't need this stuff if you drop mil edit somewhere
+ * */
+
+/* mil-edit Editor Area 
+ * For styling the lists, textarea, etc... */
+
+
+#editor { 
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #cfcfcf;
+  border-top: none;
+  font-size: 13px;
+  font-family: Open Sans;
+}
+
+#editor a {
+  text-decoration: none;
+  padding: 0 2px;
+  color: #002ab3;
+  cursor: pointer;
+}
+#editor a:hover { color: white; background-color: #002ab3; }
+
+
+#editor div#area {
+  clear: both;
+  overflow: hidden;
+  display: table;
+  width: 100%;
+  background: white;
+}
+
+#editor #list {
+  display: table-cell;
+  vertical-align: top;
+  height: 100%;
+}
+
+#editor a {
+  text-decoration: none;
+  padding: 0 2px;
+  color: #002ab3;
+  cursor: pointer;
+}
+#editor a:hover { color: white; background-color: #002ab3; }
+
+#editor #active {
+  color: black;
+  background: #ececec; 
+  border-left: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+#editor #active textarea {
+  width: 100%;
+  background: none;
+  border: none; outline: none !important;
+  font-family: inherit; font-size: inherit;
+  resize: none;
+  padding: 0; margin: 0;
+  word-wrap: break-word;
+  white-space:pre;
+}
+
+#editor ::selection, #editor ::-moz-selection, #editor ::-webkit-selection {
+  background: #fffde0;
+}
+
+#editor ul {
+	margin: 0;
+  display: block;
+  padding-left: 10px;
+  color: #212121;
+  line-height: 1em;
+  border: none;
+	
+}
+#editor ul ul {
+  border: 1px solid #cfcfcf;
+  border-top: 1px solid #cfcfcf;
+  border-right: 1px solid #cfcfcf;
+  margin: 5px 0;
+  margin-bottom: none !important;
+}
+
+#editor li {
+  display: list-item;
+  background-color: #fdfdfd;
+  color: black;
+
+  margin-left: 5px;
+	padding: 5px;
+  padding-left: 15px;
+
+  border-left: 1px solid #cfcfcf;
+  border-bottom: 1px dotted #cfcfcf;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+#editor li:last-child {
+  border-bottom: none;
+}
+#editor li:hover { background: white; }
+#editor li.parent {
+}
+#editor li.scoped.parent { 
+  color: black;
+  background: #f9f9f9;
+}
+
+.nest {
+}
+
+#editor li.scoped.nest { 
+}
+#editor li.scoped.nest li {
+  color: black;
+}
+ul li ul li {
+  color: #545454;
+  background: #fbfbfb;
+}
+
+#editor ul { background: #ffffff; padding-left: 0;}
+#editor ul ul { background: #f0f0f0; }
+#editor ul ul ul { background: #ffffff; }
+#editor ul ul ul ul { background: #f0f0f0; }
+#editor ul ul ul ul ul { background: #ffffff; }
+#editor ul ul ul ul ul ul { background: #f0f0f0; }
+#editor ul ul ul ul ul ul ul { background: #ffffff; }
+#editor ul ul ul ul ul ul ul ul { background: #f0f0f0; }
+#editor ul ul ul ul ul ul ul ul ul { background: #ffffff; }
+#editor ul ul ul ul ul ul ul ul ul ul { background: #f0f0f0; }
+#editor ul ul ul ul ul ul ul ul ul ul ul { background: #ffffff; }
+
+#editor ul li { 
+  font-size: 14px;
+  line-height: 1.5em;
+  padding-left: 15px;
+}
+
+#editor strong { font-weight: bold; }
+#editor em { font-style: italic; }
+
+#editor ul li.collapsed{
+  text-align: right;
+}
+//#editor ul li.collapsed:after { content: "..."; }
+
+#editor ul li.collapsed { display: none; }
+#editor ul li.collapse.parent { display: block; }
+
+#editor ul li .collapse-expand {
+  width: 13px;
+  font-size: 11px;
+  line-height: 22px;
+  height: 22px;
+  padding: 0px 6px;
+  //border: 1px solid #cfcfcf;
+  //background: white;
+  background-image: url('../images/bullet_arrow_down.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  right: 110px;
+
+  margin-top: -1px;
+}
+
+#editor ul li.parent.folded {
+  border-bottom: 1px solid #cfcfcf;
+}
+#editor.viewing-help ul li .collapse-expand {
+  right: 370px;
+}
+#editor ul li .collapse-expand:hover {
+  //width: 70px;
+  //border: 1px solid #cfcfcf;
+  //background-color: #f7f7f7;
+  text-align: left;
+}
+
+#wrapped {
+}
+
+#editor ul li .collapse-expand.collapsed {
+  //margin-top: 0;
+  //left: 45px;
+  background-image: url('../images/bullet_arrow_up.png') !important;
+}
+
+#editor ul li ul li .collapse-expand { margin-right: 5px; }
+#editor ul li ul li ul li .collapse-expand { margin-right: 10px; }
+#editor ul li ul li ul li ul li .collapse-expand { margin-right: 15px; }
+#editor ul li ul li ul li ul li ul li .collapse-expand { margin-right: 20px; }
+#editor ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 25px; }
+#editor ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 30px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 35px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 40px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 45px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 50px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 55px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 60px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 65px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 70px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 75px; }
+#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 80px; }
+
+/* Buttons Bar at the top of the editor */
+#buttons {
+  height: 35px;
+
+  padding: 0 5px; 
+  padding-right: 0;
+
+  background: white;
+  //background: url('../images/buttons_bar.png');
+  background-position: 0 -9px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  border-bottom: 1px solid #cfcfcf;
+  border-top: 1px solid #cfcfcf;
+
+  width: auto;
+  clear: both;
+}
+
+#buttons a {
+  width: 20px;
+  height: 22px;
+
+  margin: 0 0px;
+  margin-top: 5px;
+
+  background: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  border: 1px solid white;
+  //border: 1px solid #cfcfcf;
+  //background-color: #fdfdfd;
+
+  float: left;
+}
+
+#buttons a:hover, #buttons a.active {
+  border: 1px solid #cfcfcf;
+  background-color: #e6e6e6;
+}
+
+#buttons.fixed {
+  position: fixed;
+  top: 20px;
+  height: auto;
+  padding-bottom: 5px;
+  width: 30px;
+  padding-left: 4px;
+  padding-right: 0px;
+  padding-top: 5px;
+  margin-left: -36px;
+  border: 1px solid #e8e8e8;
+  border-right: 1px solid white;
+
+}
+#buttons.fixed .separator { 
+  width: 24px;
+  height: 1px;
+  border-left: none;
+  border-top: 1px solid #e8e8e8;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+#buttons.fixed a#keys { display: none; }
+
+#buttons.fixed a {
+  margin-bottom: 0px;
+  margin-top: 1px;
+  //border: 1px solid #e8e8e8;
+}
+
+#buttons.fixed a:hover {
+  border: 1px solid #cfcfcf;
+}
+
+
+
+#buttons .separator {
+  display: block;
+  float: left;
+  height: 15px;
+  border-left: 1px solid #cfcfcf;
+  width: 0px;
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+
+
+#buttons a#keys { 
+  float: right;
+  display: inline-block;
+  width: auto;
+  height: 35px;
+  line-height: 35px;
+
+  background-image: url('../images/help.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+
+  padding: 0;
+  //padding-right: 10px;
+
+  font-size: 16px !important;
+  color: black;
+  padding-left: 35px;
+  background-color: #fcfcfc;
+  margin-top: 0;
+
+  border: none;
+  border-left: 1px solid #cfcfcf;
+}
+
+#buttons a#keys span {
+  color: #4d4d4d;
+  //border-left: 1px solid #cfcfcf;
+  //padding-left: 8px;
+  line-height: 10px;
+  height: 10px;
+}
+
+
+#buttons a#keys:hover {
+  border: none; border-left: 1px solid #cfcfcf;
+}
+#buttons a#keys:hover span { color: #002ab3; }
+#buttons a#keys.enabled { font-size: 15px; }
+
+#buttons a#undent { margin-left: 0; background-image: url('../images/text_indent_remove.png'); /*border-right: none; */ }
+#buttons a#indent { background-image: url('../images/text_indent.png'); }
+#buttons a#link { background-image: url('../images/world_link.png'); }
+#buttons a#italic { background-image: url('../images/text_italic.png'); }
+#buttons a#bold { background-image: url('../images/text_bold.png'); /*border-right: none;*/ }
+#buttons a#undo { background-image: url('../images/arrow_undo.png'); }
+#buttons a#redo { background-image: url('../images/arrow_redo.png'); }
+
+#buttons a#smaller { background-image: url('../images/text_lowercase.png'); }
+#buttons a#bigger { background-image: url('../images/text_uppercase.png'); }
+
+#buttons a#smaller, #buttons a#bigger {
+  /* until i get some better icons */
+  background-image: none;
+  float: right;
+  color: black;
+  line-height: 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+#buttons a#smaller {
+  margin-right: 5px;
+}
+
+#buttons .hidden { display: none; }
+
+
+/* Keybindings Pane */
+#editor #keybindings { 
+  font-size: 12px;
+  line-height: 24px;
+  text-align: left;
+  width: 230px;
+  font-size: 13px;
+  background: #fcfcfc;
+  display: none;
+  opacity: 0;
+  margin: 0;
+  vertical-align: top;
+  border-left: 1px solid #cfcfcf;
+  padding: 15px;
+  padding-top: 0;
+  margin-left: 20px;
+  background: white;
+
+
+  position: relative;
+  font-family: Open Sans;
+  height: 400px;
+}
+
+#editor #keybindings .basic {
+  //position: fixed;
+}
+
+#editor #keybindings .basic.fixed {
+  position: fixed;
+  top: 0;
+}
+
+#editor #keybindings a#collapse {
+  vertical-align: bottom;
+  float: left;
+  margin-top: 20px;
+  //position: fixed;
+}
+
+#editor #keybindings.visible { display: table-cell; }
+
+#editor #keybindings h2 a {
+  font-size: 11px;
+  float: right;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+#editor #keybindings h2 {
+  display: block;
+  margin: 10px 0;
+  border-bottom: 1px solid #cfcfcf;
+
+  font-size: 15px;
+  line-height: 30px;
+
+  color: #002ab3;
+  font-family: Verdana, sans;
+}
+
+#editor #keybindings span.key {
+  border: 1px solid #cfcfcf;
+  background: white;
+  display: inline-block;
+  padding: 0px 3px;
+  line-height: 18px;
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.drag-list {
+  border-left: none !important;
+  border-bottom: none !important;
+  background: none !important;
+}
+.drag-item {
+  border-bottom: 1px solid #cfcfcf !important;
+  border-right: 1px solid #cfcfcf !important;
+  border-top: 1px solid #cfcfcf;
+}
+
+#wrapped {
+  border: 1px solid #e8e8e8;
+}
+
+#size {
+  display: inline-block;
+  background-image: url('../images/font.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 50px;
+  height: 100%;
+  vertical-align: middle;
+  padding-left: 20px;
+  outline: 0 !important;
+  border: 0 !important;
+  margin-right: 20px;
+
+  float: right;
+}
+
+#size input {
+  height: 100%;
+  width: 50px;
+  border: 0;
+  outline: 0;
+}
+#size input:focus {
+}
+
+.fixed #size {
+  border: 0;
+  outline: 0;
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  left: -19px;
+  top: 246px;
+  height: 100px;
+  position: absolute;
+}
+
+#editor.size-1 .collapse-expand {
+  left: 104px;
+  
+  margin-top: -5px;
+}
+
+#editor.size-1 ul li ul li .collapse-expand { margin-left: 10px; }
+#editor.size-1 ul li ul li ul li .collapse-expand { margin-left: 20px; }
+#editor.size-1 ul li ul li ul li ul li .collapse-expand { margin-left: 30px; }
+#editor.size-1 ul li ul li ul li ul li ul li .collapse-expand { margin-left: 40px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 50px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 60px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 70px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 80px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 90px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 100px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 110px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 120px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 130px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 140px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 150px; }
+#editor.size-1 ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 160px; }
+
+
+
+#editor.size-1 .collapse-expand {
+  margin-top: -6px;
+}
+#editor.size-1 li {
+  font-size: 13px;
+  line-height: 13px;
+  padding: none;
+  margin-left: 2px;
+  border-bottom: none;
+}
+#editor.size-1 li#active {
+  border-left: 1px solid #88888A;
+  border-bottom: inherit;;
+}
+
+#editor.size-1 li.parent {
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  padding-left: 25px !important;
+  margin-top: 2px;
+}
+
+#editor.size-1 li.scoped {
+  border-left: 1px solid #cfcfcf;
+  background: #f2f2f2;
+  border-bottom: 1px #cfcfcf solid;
+}
+
+#editor.size-1 li.scoped {
+  background: white;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+#editor.size-1 li.nest {
+  padding: 0;
+}
+#editor.size-1 li.nest ul {
+  padding: 0;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  margin: 0;
+  border: none;
+  border-left: none;
+  border-bottom: 1px solid #cfcfcf;
+  background: none !important;
+  padding-left: 5px;
+}
+#editor.size-1 li.nest ul li {
+  padding-left: 5px;
+  border-left: 1px solid #cfcfcf;
+}
+
