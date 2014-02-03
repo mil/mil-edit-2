@@ -6,6 +6,7 @@ var mil_edit = (function(my) {
   var state     = my.state;
   var tree      = my.tree;
   var history   = my.history;
+  var keybindings = my.keybindings;
   var user_actions = my.user_actions;
 
   var event_handlers = new Object();
