@@ -15,11 +15,19 @@ html body {
 
 h1 { 
   font-size: 30px; 
+  line-height: 30px;
   padding-bottom: 15px;
   text-align: left;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   display: inline-block;
   letter-spacing: -5px;
+}
+
+h1 sup {
+  position: absolute;
+  margin-top: -10px;;
+  padding-left: 10px;
+  font-size: 10px;
 }
 .subline {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
