@@ -1,4 +1,3 @@
-var x = "test";
 var mil_edit = (function(my) {
   // Dependency Imported from mil_edit scope
   var history = my.history;
