@@ -23,8 +23,8 @@ var mil_edit = (function(my) {
     history : history,
 
     set_cutoff_height : function(pixels) { my.globals.cutoff_height = pixels; },
-    undo : user_actions.redo,
-    redo : user_actions.undo,
+    undo : user_actions.undo,
+    redo : user_actions.redo,
 
     drag : event_handlers.drag,
     drop : event_handlers.drop,
