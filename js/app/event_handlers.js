@@ -113,7 +113,6 @@ var mil_edit = (function(my) {
     if (util.type(k) == "[object KeyboardEvent]") {
       k = { keyCode : k.keyCode, shiftKey : k.shiftKey, ctrlKey : k.ctrlKey };
     }
-    console.log(k);
     var bindings = [
       { key : { key_code  : 89, ctrl_key : true, shift_key : false  },  handler : user_actions.redo },
       { key : { key_code  : 90, ctrl_key : true, shift_key : false  },  handler : user_actions.undo },
@@ -155,11 +154,11 @@ var mil_edit = (function(my) {
     _.each(bindings, function(b) {
       if (b.key.key_code == k.keyCode && b.key.ctrl_key == k.ctrlKey && b.key.shift_key == k.shiftKey) {
         binding_return = b.handler(); // will set binding return to true or false
-        return;
       }
     }); 
+
     if (binding_return != -1) { 
-      return binding_return; 
+      return binding_return || false; 
     } else if (_.contains(passthrough_keys, k.keyCode)) {
       if (k.ctrlKey) { return true; } // Dont add C-V and C-C to history handled by custom events
       history.add_action({

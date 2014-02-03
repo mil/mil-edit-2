@@ -76,7 +76,6 @@ var mil_edit = (function(my) {
   };
   interface.collapse_nest = function(nest_dom) {
     globals.is_animating = true;
-    console.log($(nest_dom));
     $(nest_dom).animate({ opacity: 0 }, { duration : 200,
       complete : function() { 
         $(nest_dom).addClass("collapsed"); 

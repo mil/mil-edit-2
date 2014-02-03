@@ -1,6 +1,7 @@
 var mil_edit = (function(my) {
   var globals   = my.globals;
-  var util      = my.util; var focus     = my.focus;
+  var util      = my.util; 
+  var focus     = my.focus;
   var interface = my.interface;
   var state     = my.state;
   var tree      = my.tree;
@@ -37,6 +38,7 @@ var mil_edit = (function(my) {
       },
       redo : function() { return interface.toggle_expand_collapse_current_position(); }
     });
+
     return false;
   };
   user_actions.backspace = function() {      
