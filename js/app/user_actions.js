@@ -10,12 +10,10 @@ var mil_edit = (function(my) {
 
   user_actions.redo = function() { 
     history.redo(); 
-    interface.sync_ui_buttons();
     return false; 
   };
   user_actions.undo = function() { 
     history.undo(); 
-    interface.sync_ui_buttons();
     return false; 
   };
   user_actions.undent = function() {
@@ -182,5 +180,15 @@ var mil_edit = (function(my) {
     });
     return true;
   };
+
+  // Buttons updated on each user action
+  // Don't need to account for keybindings/ui buttons seperatly
+  _.each(user_actions, function(old_callback,fn) {
+    user_actions[fn] = function() {
+      old_callback();
+      interface.sync_ui_buttons();
+    };
+  });
+
   return _.extend(my, { user_actions : user_actions });
 }(mil_edit || {})); 
