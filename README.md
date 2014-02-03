@@ -31,3 +31,4 @@ TODO
 - Allow Copy and Paste
 - Integrate Copy Paste with Undo/Redo stack
 - Finish writing unit tests
+- Buttons and Keybindings for collapse and expand all
