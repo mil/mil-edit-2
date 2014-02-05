@@ -2,7 +2,7 @@ Miledit 2
 =========
 Miledit 2 is a list editor in JS featuring basic text styling (bold, italics, links) but stripped of extraneous features of WYSIWYG. It's a list editor not a text editor. Resultingly, its lightweight minimalistic interface.  It imports and exports data as a single markdown list file.
 
-[Demo Link](http://userbound.com/ui/miledit-2)
+[Demo Link](http://userbound.com/ui/mil-edit-2)
 
 Miledit 2 is heavily adapted and inspired by my former, [mil edit](). The UI code is split into 9 modules and 1's Markdown libraries were as dependencies in favor of regex-based [mil_markdown](). As far as the user-side goes, a history stack is maintained of callback functions for stepping through state.  As far as user functionality goes, the major new features are:
 - Foldable Sections
