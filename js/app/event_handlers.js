@@ -109,56 +109,24 @@ var mil_edit = (function(my) {
 
   event_handlers.key_down = function(k) {
     if (!util.is_focused()) { if (!focus.browser_focus_reset()) { return true; } }
+    var original_event = k;
 
     // Convert k to mutable object with only properties needed
     if (util.type(k) == "[object KeyboardEvent]") {
       k = { keyCode : k.keyCode, shiftKey : k.shiftKey, ctrlKey : k.ctrlKey };
     }
-    var bindings = [
-      { key : { key_code  : 89, ctrl_key : true, shift_key : false  },  handler : user_actions.redo },
-      { key : { key_code  : 90, ctrl_key : true, shift_key : false  },  handler : user_actions.undo },
-
-      { key : { key_code  : 9,  ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right tab
-      { key : { key_code  : 37, ctrl_key  : false, shift_key : true },  handler : user_actions.undent }, // right ->
-
-      { key : { key_code  : 9, ctrl_key : false, shift_key : false  },  handler : user_actions.indent }, // left tab
-      { key : { key_code  : 39, ctrl_key : false, shift_key : true  },  handler : user_actions.indent }, // left <-
-
-      { key : { key_code  : 69, ctrl_key : true, shift_key : false  },  handler : user_actions.fold }, // ctrl e
-
-      { key : { key_code  : 46, ctrl_key : false, shift_key : false },  handler : user_actions.backspace },
-      { key : { key_code  : 8, ctrl_key : false, shift_key : false  },  handler : user_actions.backspace },
-
-      { key : { key_code : 38, ctrl_key : false, shift_key : false  },  handler : user_actions.focus_up }, // up key
-      { key : { key_code : 38, ctrl_key : false, shift_key : true   },  handler : user_actions.shift_up },  // shift up
-
-      { key : { key_code : 40, ctrl_key : false, shift_key : false  },  handler : user_actions.focus_down }, // down key
-      { key : { key_code : 40, ctrl_key : false, shift_key : true   },  handler : user_actions.shift_down }, // shift down
-
-      { key : { key_code : 13, ctrl_key : false, shift_key : false  },  handler : user_actions.enter }, // enter key
-
-      { key : { key_code : 191, ctrl_key : true, shift_key : false  },  handler : user_actions.sidebar }, // ctrl ? (shift /)
-
-      { key : { key_code : 73, ctrl_key : true, shift_key : false   },  handler : user_actions.italic }, // ctrl i
-      { key : { key_code : 66, ctrl_key : true, shift_key : false   },  handler : user_actions.bold }, // ctrl b
-      { key : { key_code : 37, ctrl_key : false, shift_key : false  },  handler : user_actions.left_arrow }, // <-
-      { key : { key_code : 39, ctrl_key : false, shift_key : false  },  handler : user_actions.right_arrow }, // -> 
-
-      //{ key_code : 89, ctrl_key : true, shift_key : false } : handlers[link], // ctrl u
-      { key : { key_code : 88, ctrl_key : true, shift_key : true    }, handler : user_actions.clear }//ctrl x
-    ];
-
     var passthrough_keys = _.union(61, 173, _.range(48,58), _.range(65, 91), 32, _.range(186,193), _.range(219, 223));
 
     // Check to see if we fill any of the bindings
     var binding_return = -1;
-    _.each(bindings, function(b) {
+    _.each(keybindings, function(b) {
       if (b.key.key_code == k.keyCode && b.key.ctrl_key == k.ctrlKey && b.key.shift_key == k.shiftKey) {
         binding_return = b.handler(); // will set binding return to true or false
       }
     }); 
 
-    if (binding_return != -1) { 
+    if (binding_return != -1) {
+      original_event.preventDefault();
       return binding_return || false; 
     } else if (_.contains(passthrough_keys, k.keyCode)) {
       if (k.ctrlKey) { return true; } // Dont add C-V and C-C to history handled by custom events

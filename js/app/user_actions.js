@@ -1,11 +1,11 @@
 var mil_edit = (function(my) {
-  var globals   = my.globals;
-  var util      = my.util; 
-  var focus     = my.focus;
-  var interface = my.interface;
-  var state     = my.state;
-  var tree      = my.tree;
-  var history   = my.history;
+  var globals        = my.globals;
+  var util           = my.util; 
+  var focus          = my.focus;
+  var interface      = my.interface;
+  var state          = my.state;
+  var tree           = my.tree;
+  var history        = my.history;
 
   var user_actions = new Object();
 
@@ -57,10 +57,10 @@ var mil_edit = (function(my) {
       }
       return false; 
     } else {
-      var focus_state = state.dump_focus_state();
-      history.add_action({
-        undo : function() { return state.load_focus_state(focus_state); },
-        redo : function() { return event_handlers.simulate_key({ keyCode : 46 }); }
+      var focus_state = state.dump_state();
+      history.do_action({
+        undo : function() { return state.load_state(focus_state); },
+        redo : function() { return my.event_handlers.simulate_key({ keyCode : 46 }); }
       });
       return true;
     }
