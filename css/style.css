@@ -16,6 +16,23 @@
   font-family: Open Sans;
 }
 
+#editor.viewing-help.cover-all {
+  position: relative;
+  min-height: 460px;
+}
+
+#editor.viewing-help.cover-all #keybindings {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  left: -15px;
+}
+#editor.viewing-help.cover-all #keys span {
+  display: none; 
+}
+
+
 #editor a {
   text-decoration: none;
   padding: 0 2px;
@@ -140,6 +157,7 @@ ul li ul li {
 #editor ul ul ul ul ul ul ul ul ul ul ul { background: #ffffff; }
 
 #editor ul li { 
+  position: relative;
   font-size: 14px;
   line-height: 1.5em;
   padding-left: 15px;
@@ -168,7 +186,7 @@ ul li ul li {
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
-  right: 110px;
+  right: 5px;
 
   margin-top: -1px;
 }
@@ -177,7 +195,7 @@ ul li ul li {
   border-bottom: 1px solid #cfcfcf;
 }
 #editor.viewing-help ul li .collapse-expand {
-  right: 370px;
+  right: 5px;
 }
 #editor ul li .collapse-expand:hover {
   //width: 70px;
@@ -194,24 +212,6 @@ ul li ul li {
   //left: 45px;
   background-image: url('../images/bullet_arrow_up.png') !important;
 }
-
-#editor ul li ul li .collapse-expand { margin-right: 5px; }
-#editor ul li ul li ul li .collapse-expand { margin-right: 10px; }
-#editor ul li ul li ul li ul li .collapse-expand { margin-right: 15px; }
-#editor ul li ul li ul li ul li ul li .collapse-expand { margin-right: 20px; }
-#editor ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 25px; }
-#editor ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 30px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 35px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 40px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 45px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 50px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 55px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 60px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 65px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 70px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 75px; }
-#editor ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li .collapse-expand { margin-right: 80px; }
-
 /* Buttons Bar at the top of the editor */
 #buttons {
   height: 35px;
@@ -409,8 +409,8 @@ ul li ul li {
 #editor #keybindings a#collapse {
   vertical-align: bottom;
   float: left;
-  margin-top: 20px;
-  //position: fixed;
+  position: absolute;
+  bottom: 60px;
 }
 
 #editor #keybindings.visible { display: table-cell; }

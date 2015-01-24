@@ -5,6 +5,7 @@ var mil_edit = (function(my) {
   var util    = my.util;
   var focus   = my.focus;
   var globals = my.globals;
+  var event_handlers = my.event_handlers;
   var interface = new Object();
 
   interface.sync_ui_buttons = function() {
@@ -99,6 +100,8 @@ var mil_edit = (function(my) {
 
   interface.toggle_sidebar = function() {
     if (globals.is_animating) { return false; }
+    my.event_handlers.window_resize()
+
     globals.is_animating = true;
     if (globals.help_enabled) {
       $("#keys").animate({ 'width': 'auto' }, { duration: 150 }).removeClass("enabled"); 
@@ -112,8 +115,12 @@ var mil_edit = (function(my) {
       });
       globals.help_enabled= false;
     } else {
-      $("#keys").animate({ 'width': '225px' }, { duration: 150 }).addClass('enabled');
-      $("#keys span").text("Help");
+      if (parseInt($("#editor").css("width").split("px")[0]) < 415) {
+        $("#keys").addClass('enabled');
+      } else {
+        $("#keys").animate({ 'width': '225px' }, { duration: 150 }).addClass('enabled');
+        $("#keys span").text("Help");
+      }
       $("#keybindings", globals.root).addClass("visible").animate({ opacity: 1.0 }, { 
         duration: 600, easing: 'ease-in',
         complete : function() { 

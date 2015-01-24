@@ -229,6 +229,13 @@ var mil_edit = (function(my) {
     interface.set_size(parseInt($("#size input").val()));
   }
   //event_handlers.timed_interval = function(e) { }
+  event_handlers.window_resize = function(e) {
+    if (parseInt($("#editor").css("width").split("px")[0]) < 415) {
+      $("#editor").addClass("cover-all");
+    } else {
+      $("#editor").removeClass("cover-all");
+    }
+  }
 
   event_handlers.install = function() {
     $(document).on('keydown', event_handlers.key_down);
@@ -240,6 +247,8 @@ var mil_edit = (function(my) {
     $(document).on('copy', "textarea", event_handlers.copy);
     $(document).on('paste', "textarea", event_handlers.paste);
     $(document).on('scroll', event_handlers.scroll);
+    $(window).on('resize', event_handlers.window_resize);
+    
     $("#size input").on('change', event_handlers.font_size_change);
     //setInterval(event_handlers.timed_interval, 500);
   }
