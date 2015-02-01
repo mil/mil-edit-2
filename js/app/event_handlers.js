@@ -240,12 +240,12 @@ var mil_edit = (function(my) {
   event_handlers.install = function() {
     $(document).on('keydown', event_handlers.key_down);
     $(document).on('keyup', event_handlers.key_up );
-    $(document).on('mousedown', "li", event_handlers.mouse_down);
-    $(document).on('mouseup', "li", event_handlers.mouse_up);
-    $(document).on('click', "textarea", event_handlers.click_textarea);
-    $(document).on('cut', "textarea", event_handlers.cut);
-    $(document).on('copy', "textarea", event_handlers.copy);
-    $(document).on('paste', "textarea", event_handlers.paste);
+    $(document).on('mousedown', "#editor li", event_handlers.mouse_down);
+    $(document).on('mouseup', "#editor li", event_handlers.mouse_up);
+    $(document).on('click', "#editor textarea", event_handlers.click_textarea);
+    $(document).on('cut', "#editor textarea", event_handlers.cut);
+    $(document).on('copy', "#editor textarea", event_handlers.copy);
+    $(document).on('paste', "#editor textarea", event_handlers.paste);
     $(document).on('scroll', event_handlers.scroll);
     $(window).on('resize', event_handlers.window_resize);
     
@@ -256,12 +256,12 @@ var mil_edit = (function(my) {
   event_handlers.uninstall = function() {
     $(document).off('keydown', event_handlers.key_down);
     $(document).off('keyup', event_handlers.key_up );
-    $(document).off('mousedown', "li", event_handlers.mouse_down);
-    $(document).off('mouseup', "li", event_handlers.mouse_up);
-    $(document).off('click', "textarea", event_handlers.click_textarea);
-    $(document).off('cut', "textarea", event_handlers.cut);
-    $(document).off('copy', "textarea", event_handlers.copy);
-    $(document).off('paste', "textarea", event_handlers.paste);
+    $(document).off('mousedown', "#editor li", event_handlers.mouse_down);
+    $(document).off('mouseup', "#editor li", event_handlers.mouse_up);
+    $(document).off('click', "#editor textarea", event_handlers.click_textarea);
+    $(document).off('cut', "#editor textarea", event_handlers.cut);
+    $(document).off('copy', "#edior textarea", event_handlers.copy);
+    $(document).off('paste', "#editor textarea", event_handlers.paste);
   }
 
   return _.extend(my, { event_handlers : event_handlers });
